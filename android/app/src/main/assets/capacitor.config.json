@@ -1,5 +1,5 @@
 {
-	"appId": "io.ionic.notes",
+	"appId": "io.ionic.starter",
 	"appName": "MOproject",
 	"webDir": "www",
 	"bundledWebRuntime": false
