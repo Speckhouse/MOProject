@@ -1,0 +1,10 @@
+{
+  "name": "MOproject",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {
+      "enabled": false
+    }
+  },
+  "type": "angular"
+}

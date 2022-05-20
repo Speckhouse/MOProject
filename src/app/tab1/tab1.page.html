@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Notes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<!--    <ion-header collapse="condense">-->
+<!--      <ion-toolbar>-->
+<!--        <ion-title size="large">Tab 1</ion-title>-->
+<!--      </ion-toolbar>-->
+<!--    </ion-header>-->
+    <ion-item>
+      {{joke.value}}
+    </ion-item>
+    <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350" class="ion-content-scroll-host">
+      <ion-list>
+        <div *cdkVirtualFor="let item of items, let index = index;">
+          <ion-item-divider *ngIf="!dateSameAsLast(index)">{{item.getDay}}</ion-item-divider>
+          <ion-item>
+            <ion-card button="True" [routerLink]="['/tabs/tab2', {id:item.id}]" >
+              <ion-card-header>
+                <ion-card-title>{{ item.getTime }} - {{ item.title }}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>{{ item.shortnote }}</ion-card-content>
+            </ion-card>
+          </ion-item>
+        </div>
+      </ion-list>
+    </cdk-virtual-scroll-viewport>
+</ion-content>
